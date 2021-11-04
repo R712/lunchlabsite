@@ -872,6 +872,7 @@ section.recruit .openposition p {
 }
 
 .copyright nav a {
+  margin: 4px 0;
   padding: 5px 0;
   border-bottom: 1px solid transparent;
   color: rgba(28, 36, 43, 0.4);
@@ -882,6 +883,16 @@ section.recruit .openposition p {
 .copyright nav a:hover {
   color: #1C242B;
   text-decoration: underline;
+}
+
+.copyright nav:last-child a:last-child {
+  margin-top: 24px;
+  color: #1C242B;
+  text-align: right;
+}
+
+.copyright nav strong {
+  color: #4285F4;
 }
 
 @-webkit-keyframes blingEffect {
