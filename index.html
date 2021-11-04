@@ -18,17 +18,17 @@
 
     <header class="gnb wow fadeInDown">
         <div class="inner-wrapper">
-            <h1><a href="javascript:void(0);">itemscout.</a></h1>
+            <h1><a href="#jump-hero">itemscout.</a></h1>
             <nav>
-                <a href="javascript:void(0);">회사소개</a>
-                <a href="javascript:void(0);">미디어</a>
-                <a href="javascript:void(0);">인터뷰</a>
-                <a href="javascript:void(0);">채용안내</a>
+                <a href="#jump-intro">회사소개</a>
+                <a href="#jump-media">미디어</a>
+                <a href="#jump-recruit">채용안내</a>
+                <a href="#jump-contact">문의하기</a>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
+    <section id="jump-hero" class="hero">
         <div class="msg">
             <strong class="wow fadeInUp" data-wow-delay=".25s">셀러에 의하여</strong>
             <strong class="wow fadeInUp" data-wow-delay=".25s">셀러를 위해 만듭니다.</strong>
@@ -37,7 +37,59 @@
         </div>
         <span class="data-copyright">Photo by <a href="https://unsplash.com/@olenkasergienko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Olena Sergienko</a> on <a href="https://unsplash.com/s/photos/office?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
         </span>
-        <button class="btn-jump">⇣</button>
+        <button class="btn-jump" onclick="location.href='#jump-intro'">⌄</button>
+    </section>
+
+    <section id="jump-intro" class="interview">
+        <div class="msg">
+            <strong class="wow fadeInUp" data-wow-delay=".25s">우리 회사는</strong>
+            <strong class="wow fadeInUp" data-wow-delay=".25s">이런 회사랍니다.</strong>
+            <p class="wow fadeIn" data-wow-delay=".25s">좀 더 자세한 우리 회사의 근무환경과 문화를 소개합니다.</p>
+            <div class="bubble wow fadeInUp" data-wow-delay=".5s">
+                <div class="item">
+                    <img src="img/img-ceomsg.png" />
+                    <h4>최경준 <em>CEO</em></h4>
+                    <p>첫째, 팀원은 가족이 아닙니다. 둘째, "커뮤니케이션 스킬이 중요하다"는 말은 빈말이 아닙니다. 셋째, 스톡옵션은 연봉을 깎기 위한 수단이 아닙니다.</p>
+                    <a href="https://itemscout.notion.site/WELCOME-TO-itemscout-7f2cce6ff62442688dde5f7ca340226f">전문 읽어보기</a>
+                </div>
+                <div class="item">
+                    <img src="img/img_floor_0302.jpeg" />
+                    <h4>근무위치/환경 <em>OFFICE</em></h4>
+                    <p><u>현재 전직원 자율재택근무를 시행중</u>이며, 희망하는 분은 디캠프 최고의 공간인 프론트원(공덕역)으로 출근하시게 됩니다.</p>
+                    <a href="https://front1.kr/frontone/about">프론트원 자세히보기</a>
+                </div>
+                <div class="item">
+                    <img src="img/img-party.png" />
+                    <h4>워크샵/회식</h4>
+                    <p>현재 안전을 최우선하기때문에 워크샵은 보류중이며, 회식의 경우 사전 협의하에 비대면으로 진행합니다. (법인카드로 각자 먹고 싶은 음식 한도내 결제)</p>
+                </div>
+            </div>
+        </div>
+        <button class="btn-jump" onclick="location.href='#jump-media'">⌄</button>
+    </section>
+
+    <section id="jump-media" class="media">
+        <h3 class="wow fadeInUp" data-wow-delay=".25s">미디어 속 아이템스카우트</h3>
+        <p class="wow fadeIn" data-wow-delay=".25s">우리 회사의 대외적인 소식과 뉴스를 모았습니다.</p>
+        <div class="news">
+            <div class="wow fadeInUp" data-wow-delay=".75s">
+                <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=sec&sid1=101&oid=008&aid=0004641911">이커머스 데이터분석 '문리버', 10억 시리즈A 투자유치</a>
+                <span>머니투데이</span>
+            </div>
+            <div class="wow fadeInUp" data-wow-delay=".5s">
+                <a href="https://www.news1.kr/articles/?3958102">카카오벤처스, 온라인 판매분석 '아이템스카우트'에 9억 투자</a>
+                <span>news1뉴스</span>
+            </div>
+            <div class="wow fadeInUp" data-wow-delay=".25s">
+                <a href="https://www.hankyung.com/economy/article/2020110908541">'온라인 판매분석' 아이템스카우트 돌풍</a>
+                <span>한국경제</span>
+            </div>
+            <div class="wow fadeInUp">
+                <a href="https://www.fnnews.com/news/202102141809243260">잘 팔린 상품부터 트렌드까지 알려주니 온라인 셀러들 열광 [유망 중기·스타트업 'Why Pick']</a>
+                <span>파이낸셜뉴스</span>
+            </div>
+        </div>
+        <button class="btn-jump" onclick="location.href='#jump-recruit'">⌄</button>
     </section>
 
     <section class="introduce">
@@ -74,85 +126,48 @@
                 </div>
             </div>
         </div>
-        <button class="btn-jump">⌄</button>
+        <button class="btn-jump" onclick="location.href='#jump-media'">⌄</button>
     </section>
 
-    <section class="media">
-        <div class="msg">
-            <strong class="wow fadeInUp" data-wow-delay=".25s">미디어 속</strong>
-            <strong class="wow fadeInUp" data-wow-delay=".25s">아이템스카우트</strong>
-            <p class="wow fadeIn" data-wow-delay=".25s">우리 회사의 대외적인 소식과 뉴스를 모았어요.<br>더 많은 관심과 주목을 받고싶어요.</p>
-            <a href="javascript:void(0);" class="link-action wow fadeInUp" data-wow-delay="1s">지금 문의하기 &gt;</a>
-            <div class="news">
-                <div class="wow fadeInUp">
-                    <a href="#">적은 자본으로 가능한 온라인 창업이어도 전략은 필요합니다.</a>
-                    <a href="#">네이버뉴스</a>
-                </div>
-                <div class="wow fadeInUp" data-wow-delay=".25s">
-                    <a href="#">적은 자본으로 가능한 온라인 창업이어도 전략은 필요합니다.</a>
-                    <a href="#">네이버뉴스</a>
-                </div>
-                <div class="wow fadeInUp" data-wow-delay=".5s">
-                    <a href="#">적은 자본으로 가능한 온라인 창업이어도 전략은 필요합니다.</a>
-                    <a href="#">네이버뉴스</a>
-                </div>
-                <div class="wow fadeInUp" data-wow-delay=".75s">
-                    <a href="#">적은 자본으로 가능한 온라인 창업이어도 전략은 필요합니다.</a>
-                    <a href="#">네이버뉴스</a>
-                </div>
-                <div class="wow fadeInUp" data-wow-delay="1s">
-                    <a href="#">적은 자본으로 가능한 온라인 창업이어도 전략은 필요합니다.</a>
-                    <a href="#">네이버뉴스</a>
-                </div>
-                <div class="wow fadeInUp" data-wow-delay="1.25s">
-                    <a href="#">적은 자본으로 가능한 온라인 창업이어도 전략은 필요합니다.</a>
-                    <a href="#">네이버뉴스</a>
-                </div>
+    <section id="jump-recruit" class="recruit">
+        <h3 class="wow fadeInUp" data-wow-delay=".25s">채용 포지션</h3>
+        <p class="wow fadeInUp" data-wow-delay=".25s">활성된 포지션은 상시 적극 채용중인 포지션입니다.</p>
+        <div class="openposition wow fadeInUp" data-wow-delay=".5s">
+            <div class="is-open">
+                <h4><em>경력</em> 서버 / 풀스택 개발자</h4>
+                <p>대규모 트래픽, 대용량 데이터 처리 경험 우대. Node.js, MySQL, Redis...</p>
+                <a href="https://itemscout.notion.site/WELCOME-TO-itemscout-7f2cce6ff62442688dde5f7ca340226f">자세히</a>
+            </div>
+            <div class="is-open">
+                <h4><em>경력</em> 프론트엔드 개발자</h4>
+                <p>현 개발환경: Vue, Typescript 등. 개발 스텍 선택 및 개선은 열려있습니다.</p>
+                <a href="https://itemscout.notion.site/WELCOME-TO-itemscout-7f2cce6ff62442688dde5f7ca340226f">자세히</a>
+            </div>
+            <div class="is-open">
+                <h4><em>경력</em> 데이터 엔지니어</h4>
+                <p>사내 모든 팀과 두루 함께 하게 되며, 다양한 실험과 검증을 기대하고 있습니다.</p>
+                <a href="https://itemscout.notion.site/WELCOME-TO-itemscout-7f2cce6ff62442688dde5f7ca340226f">자세히</a>
+            </div>
+            <div class="is-open">
+                <h4><em>경력</em> PR / 컨텐츠 담당</h4>
+                <p>각종 글쓰기 마케팅 경력이 있는 분, 스타트업 경험이 있으신 분, SNS 채널을 운영해보신 분.</p>
+                <a href="https://itemscout.notion.site/WELCOME-TO-itemscout-7f2cce6ff62442688dde5f7ca340226f">자세히</a>
+            </div>
+            <div class="is-closed">
+                <h4>그외 포지션</h4>
+                <p>상기 포지션외에 현재 모두 채용 마감되어있습니다, 감사합니다.</p>
             </div>
         </div>
-        <button class="btn-jump">⌄</button>
+        <span class="data-copyright">Photo by <a href="https://unsplash.com/@melindagimpel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Melinda Gimpel</a> on <a href="https://unsplash.com/s/photos/desk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></span>
     </section>
 
-    <section class="interview">
-        <div class="msg">
-            <strong class="wow fadeInUp" data-wow-delay=".25s">우리 회사는</strong>
-            <strong class="wow fadeInUp" data-wow-delay=".25s">이런 회사랍니다.</strong>
-            <p class="wow fadeIn" data-wow-delay=".25s">하고싶은 말이 있는 팀원들의 짧은 소갯말 관심있으신가요?</p>
-            <div class="bubble wow fadeInUp" data-wow-delay=".5s">
-                <div class="item">
-                    <img src="img/who-ckj.jpeg" />
-                    <h4>최경준 <em>CEO</em></h4>
-                    <p>숭구리당당 요지경 속이다. 최경준은 나야 둘이 될 순 없어- 우 베이베</p>
-                </div>
-                <div class="item">
-                    <img src="img/who-kdh.png" />
-                    <h4>김도훈 <em>DAD</em></h4>
-                    <p>숭구리당당 요지경 속이다. 최경준은 나야 둘이 될 순 없어- 우 베이베</p>
-                </div>
-                <div class="item">
-                    <img src="img/who-cjk.jpeg" />
-                    <h4>차제관 <em>MOM</em></h4>
-                    <p>숭구리당당 요지경 속이다. 최경준은 나야 둘이 될 순 없어- 우 베이베</p>
-                </div>
-                <div class="item">
-                    <img src="img/who-ckj.jpeg" />
-                    <h4>최경준 2세 <em>SON</em></h4>
-                    <p>숭구리당당 요지경 속이다. 최경준은 나야 둘이 될 순 없어- 우 베이베</p>
-                </div>
-            </div>
+    <section id="jump-contact" class="hello">
+        <strong class="wow fadeInUp" data-wow-delay=".25s">우리 비대면 짧은 미팅할까요?</strong>
+        <div class="wow fadeInUp" data-wow-delay=".5s">
+            <strong>👩🏻‍💻</strong>
+            <button onclick="window.location='mailto:help@itemscout.io'">이메일 문의하기</button>
+            <button hidden>간편 채팅</button>
         </div>
-        <button class="btn-jump">⌄</button>
-    </section>
-
-    <section class="hello">
-        <form action="javascript:void(0);">
-            <strong class="wow fadeInUp" data-wow-delay=".25s">우리 비대면 짧은 미팅할까요?</strong>
-            <strong class="wow fadeInUp" data-wow-delay=".25s">👩🏻‍💻</strong>
-            <div class="wow fadeInUp" data-wow-delay=".5s">
-                <button>이메일 문의하기</button>
-                <button>간편 채팅</button>
-            </div>
-        </form>
     </section>
 
     <footer class="copyright wow fadeIn fast">
@@ -163,15 +178,17 @@
                 <p>사업자등록번호: 505-81-86012, 대표: 최경준<br/>통신판매신고번호: 제 2020-서울강남-02113호<br/>서울특별시 마포구 마포대로 122, 프론트원 17층<br/>대표전화: 070-8833-3002</p>
             </div>
             <nav class="sitemap wow fadeInUp" data-wow-delay=".25s">
-                <a href="javascipt:void(0);">회사소개</a>
-                <a href="javascipt:void(0);">미디어</a>
-                <a href="javascipt:void(0);">인터뷰</a>
-                <a href="javascipt:void(0);">아이템스카우트</a>
+                <a href="#jump-intro">회사소개</a>
+                <a href="#jump-media">미디어</a>
+                <a href="#jump-interview">인터뷰</a>
+                <a href="#jump-recruit">채용정보</a>
+                <a href="https://itemscout.io">아이템스카우트</a>
             </nav>
             <nav class="global wow fadeInUp" data-wow-delay=".5s">
                 <a href="javascipt:void(0);">개인정보 처리방침</a>
                 <a href="javascipt:void(0);">이용약관</a>
-                <a href="javascipt:void(0);">제휴문의: help@itemscout.io</a>
+                <a href="mailto:help@itemscout.io">제휴문의: <strong>help@itemscout.io</strong></a>
+                <a href="#jump-intro">⇡ 위로</a>
             </nav>
         </div>
     </footer>

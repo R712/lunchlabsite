@@ -33,6 +33,7 @@ html {
     position: relative;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -117,6 +118,12 @@ body {
             }
             &:last-child {
                 margin-right: 30px;
+            }
+        }
+        &:hover a {
+            opacity: .6;
+            &:hover {
+                opacity: 1;
             }
         }
     }
@@ -257,7 +264,7 @@ section {
         }
     }
     &.media {
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         overflow: hidden;
         &::before {
@@ -270,15 +277,23 @@ section {
             background: $c-white url('../img/bg-media.png') no-repeat fixed center right;
             background-size: cover;
         }
-        .msg {
+        h3 {
+            z-index: 1;
             margin-top: 0;
-            padding-bottom: 180px;
+            font-size: 44px;
+        }
+        p {
+            z-index: 1;
+            text-align: center;
+        }
+        a {
+            z-index: 1;
         }
         .news {
             z-index: 1;
-            position: absolute;
-            right: 0;
-            top: 0;
+            max-width: 800px;
+            width: 90vw;
+            margin-top: 40px;
             padding: 0 40px;
             font-size: 14px;
             div {
@@ -301,13 +316,17 @@ section {
                     margin: 0;
                     padding: 0;
                     border: 0;
+                    max-width: 80%;
                     color: $c-dark;
                     font-size: 14px;
-                    &:last-child {
-                        padding-left: 10px;
-                        color: $c-gray;
-                        font-size: 12px;
-                    }
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+                span {
+                    padding-left: 10px;
+                    color: $c-gray;
+                    font-size: 12px;
                 }
             }
         }
@@ -322,6 +341,7 @@ section {
             flex-direction: row;
             align-items: center;
             justify-content: flex-start;
+            max-width: 960px;
             margin-top: 20px;
             font-size: 14px;
             div {
@@ -332,7 +352,7 @@ section {
                 justify-content: center;
                 margin: 20px 20px 20px 0;
                 padding: 12px 16px;
-                width: 180px;
+                max-width: 33%;
                 background: $c-white;
                 box-shadow: 0 1px 1px rgba($c-dark, .05), 0 24px 40px rgba($c-dark, .05);
                 border-radius: 6px;
@@ -340,14 +360,14 @@ section {
                 &:first-child {
                     margin: 40px 40px 40px 0;
                     width: 280px;
-                    transform: rotate(5deg);
+                    transform: rotate(-2deg);
                 }
                 &:nth-child(3) {
-                    transform: rotate(-5deg);
+                    transform: rotate(-2deg);
                 }
                 &:hover {
                     z-index: 5;
-                    transform: scale(1.1) rotate(5deg);
+                    transform: scale(1.1) rotate(2deg);
                     img {
                         filter: none;
                     }
@@ -360,8 +380,8 @@ section {
                 h4 {
                     margin: 10px 0 0;
                     padding: 0;
-                    font-size: 14px;
-                    letter-spacing: 2px;
+                    font-size: 16px;
+                    letter-spacing: 1px;
                     em {
                         color: $c-gray;
                         font-style: normal;
@@ -374,13 +394,29 @@ section {
                     opacity: .6;
                     font-size: 13px;
                 }
+                a {
+                    margin-top: 12px;
+                    color: $c-brand;
+                    font-weight: 700;
+                    font-size: 15px;
+                    &::after {
+                        content: '>';
+                        padding-left: 4px;
+                        font-weight: 300;
+                        opacity: .6;
+                    }
+                    &:hover {
+                        color: $c-dark;
+                        text-decoration: none;
+                    }
+                }
             }
         }
     }
     &.hello {
         position: relative;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         padding: 80px;
         width: 100%;
@@ -402,15 +438,15 @@ section {
             font-size: 44px;
         }
         div {
+            z-index: 5;
+            position: relative;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding-top: 16px;
         }
         button {
-            z-index: 1;
-            position: relative;
-            margin: 0 12px;
+            margin: -40px 12px 0;
             width: 180px;
             height: 60px;
             border-radius: 6px;
@@ -429,13 +465,101 @@ section {
             }
         }
     }
+    &.recruit {
+        background: $c-brand;
+        color: $c-white;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: $c-white url('../img/melinda-gimpel-npARYp27Ja0-unsplash.jpg') no-repeat fixed center right;
+            background-size: cover;
+            opacity: .15;
+        }
+        h3 {
+            font-size: 48px;
+        }
+        .openposition {
+            z-index: 5;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            width: 90vw;
+            max-width: 800px;
+            div {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                padding: 12px 16px;
+                margin: 12px;
+                width: 100%;
+                background: $c-bg;
+                color: $c-dark;
+                border-radius: 6px;
+                box-shadow: 0 1px 1px rgba($c-dark, .1), 0 24px 40px rgba($c-dark, .1);
+                transition: ease-in-out all .15s;
+                cursor: help;
+                &.is-open:hover {
+                    background: $c-white;
+                    transform: scale(1.05);
+                }
+                a {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 90px;
+                    height: 100%;
+                    color: $c-brand;
+                    font-weight: 700;
+                    font-size: 15px;
+                    &::after {
+                        content: '>';
+                        padding-left: 4px;
+                        font-weight: 300;
+                        opacity: .6;
+                    }
+                    &:hover {
+                        color: $c-dark;
+                    }
+                }
+                &.is-closed {
+                    background: $c-dark;
+                    color: $c-white;
+                    cursor: default;
+                    opacity: .6;
+                    a {
+                        cursor: default;
+                    }
+                }
+            }
+            h4 {
+                font-size: 16px;
+            }
+            em {
+                color: $c-brand;
+                font-style: normal;
+            }
+            p {
+                font-weight: 400;
+                font-size: 14px;
+                opacity: .8;
+            }
+        }
+    }
 }
 
 .banner {
     z-index: 10;
     position: fixed;
-    right: 60px;
-    bottom: 80px;
+    right: 40px;
+    top: 120px;
     width: 300px;
     padding: 20px;
     background: $c-bg;
@@ -539,21 +663,6 @@ section {
 @keyframes bgScale {
     50% {
         transform: scale(1.05);
-    }
-}
-
-@keyframes yellowBlob {
-    0% {
-        transform: skew(0deg);
-    }
-    40% {
-        transform: skewX(5deg) scale(0.95);
-    }
-    65% {
-        transform: skewY(-5deg);
-    }
-    100% {
-        transform: skew(0deg);
     }
 }
 

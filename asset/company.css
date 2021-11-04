@@ -32,6 +32,7 @@ html {
   position: relative;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -150,6 +151,14 @@ body {
 
 .gnb nav a:last-child {
   margin-right: 30px;
+}
+
+.gnb nav:hover a {
+  opacity: .6;
+}
+
+.gnb nav:hover a:hover {
+  opacity: 1;
 }
 
 section {
@@ -337,10 +346,10 @@ section.introduce .partners .item img {
 }
 
 section.media {
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -358,16 +367,26 @@ section.media::before {
   background-size: cover;
 }
 
-section.media .msg {
+section.media h3 {
+  z-index: 1;
   margin-top: 0;
-  padding-bottom: 180px;
+  font-size: 44px;
+}
+
+section.media p {
+  z-index: 1;
+  text-align: center;
+}
+
+section.media a {
+  z-index: 1;
 }
 
 section.media .news {
   z-index: 1;
-  position: absolute;
-  right: 0;
-  top: 0;
+  max-width: 800px;
+  width: 90vw;
+  margin-top: 40px;
   padding: 0 40px;
   font-size: 14px;
 }
@@ -407,11 +426,15 @@ section.media .news div a {
   margin: 0;
   padding: 0;
   border: 0;
+  max-width: 80%;
   color: #1C242B;
   font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-section.media .news div a:last-child {
+section.media .news div span {
   padding-left: 10px;
   color: rgba(28, 36, 43, 0.4);
   font-size: 12px;
@@ -443,6 +466,7 @@ section.interview .bubble {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  max-width: 960px;
   margin-top: 20px;
   font-size: 14px;
 }
@@ -464,7 +488,7 @@ section.interview .bubble div {
           justify-content: center;
   margin: 20px 20px 20px 0;
   padding: 12px 16px;
-  width: 180px;
+  max-width: 33%;
   background: #FFF;
   -webkit-box-shadow: 0 1px 1px rgba(28, 36, 43, 0.05), 0 24px 40px rgba(28, 36, 43, 0.05);
           box-shadow: 0 1px 1px rgba(28, 36, 43, 0.05), 0 24px 40px rgba(28, 36, 43, 0.05);
@@ -476,19 +500,19 @@ section.interview .bubble div {
 section.interview .bubble div:first-child {
   margin: 40px 40px 40px 0;
   width: 280px;
-  -webkit-transform: rotate(5deg);
-          transform: rotate(5deg);
+  -webkit-transform: rotate(-2deg);
+          transform: rotate(-2deg);
 }
 
 section.interview .bubble div:nth-child(3) {
-  -webkit-transform: rotate(-5deg);
-          transform: rotate(-5deg);
+  -webkit-transform: rotate(-2deg);
+          transform: rotate(-2deg);
 }
 
 section.interview .bubble div:hover {
   z-index: 5;
-  -webkit-transform: scale(1.1) rotate(5deg);
-          transform: scale(1.1) rotate(5deg);
+  -webkit-transform: scale(1.1) rotate(2deg);
+          transform: scale(1.1) rotate(2deg);
 }
 
 section.interview .bubble div:hover img {
@@ -506,8 +530,8 @@ section.interview .bubble div img {
 section.interview .bubble div h4 {
   margin: 10px 0 0;
   padding: 0;
-  font-size: 14px;
-  letter-spacing: 2px;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 section.interview .bubble div h4 em {
@@ -523,15 +547,34 @@ section.interview .bubble div p {
   font-size: 13px;
 }
 
+section.interview .bubble div a {
+  margin-top: 12px;
+  color: #4285F4;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+section.interview .bubble div a::after {
+  content: '>';
+  padding-left: 4px;
+  font-weight: 300;
+  opacity: .6;
+}
+
+section.interview .bubble div a:hover {
+  color: #1C242B;
+  text-decoration: none;
+}
+
 section.hello {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -559,22 +602,25 @@ section.hello strong {
 }
 
 section.hello div {
+  z-index: 5;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 16px;
 }
 
 section.hello button {
-  z-index: 1;
-  position: relative;
-  margin: 0 12px;
+  margin: -40px 12px 0;
   width: 180px;
   height: 60px;
   border-radius: 6px;
@@ -597,11 +643,130 @@ section.hello button:hover {
           transform: translateY(-4px);
 }
 
+section.recruit {
+  background: #4285F4;
+  color: #FFF;
+}
+
+section.recruit::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFF url("../img/melinda-gimpel-npARYp27Ja0-unsplash.jpg") no-repeat fixed center right;
+  background-size: cover;
+  opacity: .15;
+}
+
+section.recruit h3 {
+  font-size: 48px;
+}
+
+section.recruit .openposition {
+  z-index: 5;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 40px;
+  width: 90vw;
+  max-width: 800px;
+}
+
+section.recruit .openposition div {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 12px 16px;
+  margin: 12px;
+  width: 100%;
+  background: #E4F7FF;
+  color: #1C242B;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 1px 1px rgba(28, 36, 43, 0.1), 0 24px 40px rgba(28, 36, 43, 0.1);
+          box-shadow: 0 1px 1px rgba(28, 36, 43, 0.1), 0 24px 40px rgba(28, 36, 43, 0.1);
+  -webkit-transition: ease-in-out all .15s;
+  transition: ease-in-out all .15s;
+  cursor: help;
+}
+
+section.recruit .openposition div.is-open:hover {
+  background: #FFF;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+section.recruit .openposition div a {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 90px;
+  height: 100%;
+  color: #4285F4;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+section.recruit .openposition div a::after {
+  content: '>';
+  padding-left: 4px;
+  font-weight: 300;
+  opacity: .6;
+}
+
+section.recruit .openposition div a:hover {
+  color: #1C242B;
+}
+
+section.recruit .openposition div.is-closed {
+  background: #1C242B;
+  color: #FFF;
+  cursor: default;
+  opacity: .6;
+}
+
+section.recruit .openposition div.is-closed a {
+  cursor: default;
+}
+
+section.recruit .openposition h4 {
+  font-size: 16px;
+}
+
+section.recruit .openposition em {
+  color: #4285F4;
+  font-style: normal;
+}
+
+section.recruit .openposition p {
+  font-weight: 400;
+  font-size: 14px;
+  opacity: .8;
+}
+
 .banner {
   z-index: 10;
   position: fixed;
-  right: 60px;
-  bottom: 80px;
+  right: 40px;
+  top: 120px;
   width: 300px;
   padding: 20px;
   background: #E4F7FF;
@@ -772,44 +937,6 @@ section.hello button:hover {
   50% {
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
-  }
-}
-
-@-webkit-keyframes yellowBlob {
-  0% {
-    -webkit-transform: skew(0deg);
-            transform: skew(0deg);
-  }
-  40% {
-    -webkit-transform: skewX(5deg) scale(0.95);
-            transform: skewX(5deg) scale(0.95);
-  }
-  65% {
-    -webkit-transform: skewY(-5deg);
-            transform: skewY(-5deg);
-  }
-  100% {
-    -webkit-transform: skew(0deg);
-            transform: skew(0deg);
-  }
-}
-
-@keyframes yellowBlob {
-  0% {
-    -webkit-transform: skew(0deg);
-            transform: skew(0deg);
-  }
-  40% {
-    -webkit-transform: skewX(5deg) scale(0.95);
-            transform: skewX(5deg) scale(0.95);
-  }
-  65% {
-    -webkit-transform: skewY(-5deg);
-            transform: skewY(-5deg);
-  }
-  100% {
-    -webkit-transform: skew(0deg);
-            transform: skew(0deg);
   }
 }
 /*# sourceMappingURL=company.css.map */
