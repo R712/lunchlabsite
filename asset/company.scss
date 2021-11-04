@@ -629,6 +629,7 @@ section {
         display: flex;
         flex-direction: column;
         a {
+            margin: 4px 0;
             padding: 5px 0;
             border-bottom: 1px solid transparent;
             color: $c-gray;
@@ -638,6 +639,14 @@ section {
                 color: $c-dark;
                 text-decoration: underline;
             }
+        }
+        &:last-child a:last-child {
+            margin-top: 24px;
+            color: $c-dark;
+            text-align: right;
+        }
+        strong {
+            color: $c-brand;
         }
     }
 }
