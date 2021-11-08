@@ -541,6 +541,7 @@ section.interview .bubble div p {
   margin-top: 6px;
   opacity: .6;
   font-size: 13px;
+  text-align: left;
 }
 
 section.interview .bubble div a {
