@@ -812,6 +812,7 @@ section.recruit .openposition p {
       -ms-flex-pack: justify;
           justify-content: space-between;
   max-width: 1040px;
+  min-width: 90vw;
   padding: 80px 40px;
 }
 
