@@ -245,6 +245,7 @@ section {
             width: 60vw;
             max-width: 600px;
             .item {
+                position: relative;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -255,8 +256,14 @@ section {
                 font-size: 12px;
                 box-shadow: 0 1px 1px rgba($c-dark, .05), 0 24px 40px rgba($c-dark, .05);
                 border-radius: 12px;
+                transition: all .25s ease-in-out;
                 img {
-                    max-width: 90px;
+                    max-width: 88px;
+                    max-height: 40px;
+                }
+                &:hover {
+                    z-index: 5;
+                    transform: scale(1.08);
                 }
             }
         }
@@ -562,13 +569,27 @@ section {
     width: 300px;
     padding: 20px;
     background: $c-bg;
-    border-radius: 16px;
+    border-radius: 12px 0;
     box-shadow: 0 1px 1px rgba($c-brand, .05), 0 12px 40px rgba($c-brand, .25);
+    transition: all .25s ease-in-out;
+    &:hover {
+        background: $c-white;
+        top: 116px;
+        a {
+            opacity: 1;
+        }
+    }
+    a {
+        color: $c-dark;
+        opacity: .8;
+    }
     h4 {
         font-size: 16px;
     }
     p {
-        font-size: 14px;
+        margin-top: 8px;
+        font-size: 13px;
+        word-break: keep-all;
     }
 }
 
