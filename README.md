@@ -1,8 +1,11 @@
-# moonriver
+# 💙 moonriver
 
 official single page
 
-### use
+## 🌎 preview
+https://r712.github.io/moonriver/
+
+## 👩🏻‍💻 used
 - scss (to css with VScode plugin)
 - html
 - javascript
