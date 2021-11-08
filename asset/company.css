@@ -49,7 +49,6 @@ body {
 .wrapper {
   position: relative;
   width: 100%;
-  min-width: 1080px;
   background: #FFF;
 }
 
@@ -91,7 +90,6 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   max-width: 1040px;
-  min-width: 880px;
   width: 100%;
 }
 
@@ -121,7 +119,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  min-width: 320px;
 }
 
 .gnb nav a {
@@ -221,11 +218,11 @@ section .msg {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 40px;
-  min-width: 1040px;
+  min-width: 80vw;
   min-height: 100%;
   -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -236,6 +233,7 @@ section .msg p {
   margin-top: 10px;
   font-weight: 500;
   font-size: 18px;
+  text-align: center;
 }
 
 section .msg strong {
@@ -307,9 +305,6 @@ section.hero .msg a:hover {
 }
 
 section.introduce .partners {
-  position: absolute;
-  right: 0;
-  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -318,7 +313,8 @@ section.introduce .partners {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 55%;
+  width: 60vw;
+  max-width: 600px;
 }
 
 section.introduce .partners .item {
@@ -812,12 +808,10 @@ section.recruit .openposition p {
       -ms-flex-pack: justify;
           justify-content: space-between;
   max-width: 1040px;
-  min-width: 880px;
   padding: 80px 40px;
 }
 
 .copyright .brand {
-  min-width: 320px;
   width: 50%;
   color: rgba(28, 36, 43, 0.4);
 }
@@ -948,6 +942,212 @@ section.recruit .openposition p {
   50% {
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
+  }
+}
+
+@media (max-width: 880px) {
+  body,
+  .wrapper {
+    min-width: 100vw;
+    max-width: 100vw;
+  }
+  .wrapper {
+    overflow: hidden;
+  }
+  section {
+    min-height: 100vh !important;
+  }
+  section .msg {
+    padding: 40px !important;
+  }
+  section .msg strong {
+    font-size: 32px !important;
+  }
+  section .msg p {
+    font-size: 14px !important;
+  }
+  .gnb {
+    z-index: 500;
+    display: block;
+    padding-top: 0 !important;
+    height: 78px;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+  .gnb h1 {
+    position: relative;
+    height: 78px;
+    text-indent: -9999px;
+  }
+  .gnb h1::after {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 32px;
+    width: 20px;
+    height: 2px;
+    background: #FFF;
+    -webkit-transition: all 0.15s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    transition: all 0.15s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  }
+  .gnb h1::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 40px;
+    width: 14px;
+    height: 2px;
+    background: #FFF;
+    -webkit-transition: all 0.15s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    transition: all 0.15s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  }
+  .gnb nav {
+    position: fixed;
+    left: 0;
+    top: -100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-bottom: 10px;
+    width: 100%;
+    background: #4285F4;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    overflow: hidden;
+    -webkit-transition: all 0.25s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    transition: all 0.25s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  }
+  .gnb nav a {
+    margin: 0 !important;
+    width: 100vw;
+    height: 48px;
+    color: #FFF;
+    font-size: 16px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .gnb nav .btn-signin {
+    height: 80px;
+    background-size: 24px;
+  }
+  .gnb nav .btn-signin:hover {
+    background-color: transparent !important;
+    opacity: .6;
+  }
+  .gnb.is-open::before {
+    background: #4285F4;
+  }
+  .gnb.is-open nav {
+    top: 78px;
+  }
+  .gnb.is-open h1::after {
+    top: 34px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .gnb.is-open h1::before {
+    top: 34px;
+    width: 20px;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  .bubble {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  .bubble .item {
+    margin: 0 0 24px !important;
+    width: calc(100vw - 80px) !important;
+    max-width: 100% !important;
+  }
+  .media h3,
+  .recruit h3 {
+    font-size: 28px !important;
+  }
+  .media p,
+  .recruit p {
+    font-size: 15px !important;
+  }
+  .media .news,
+  .recruit .news {
+    padding: 0 12px !important;
+  }
+  .media .news div,
+  .recruit .news div {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    height: 72px !important;
+  }
+  .media .news div a,
+  .recruit .news div a {
+    max-width: 100% !important;
+    font-size: 16px !important;
+  }
+  .media .news div span,
+  .recruit .news div span {
+    margin-top: 10px;
+  }
+  .media .openposition,
+  .recruit .openposition {
+    margin-top: 20px !important;
+  }
+  .media .openposition p,
+  .recruit .openposition p {
+    display: none;
+    font-size: 13px !important;
+  }
+  .media .openposition a,
+  .recruit .openposition a {
+    padding-left: 20px;
+    width: 100px !important;
+    background: -webkit-gradient(linear, right top, left top, color-stop(50%, #e4f7ff), to(rgba(228, 247, 255, 0)));
+    background: linear-gradient(-90deg, #e4f7ff 50%, rgba(228, 247, 255, 0) 100%);
+    border-radius: 0 6px 6px 0;
+  }
+  .hello {
+    padding: 80px 60px !important;
+  }
+  .hello strong {
+    font-size: 32px !important;
+    text-align: center;
+    word-break: keep-all;
+  }
+  .introduce {
+    display: none;
+  }
+  .copyright .inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100vw !important;
+  }
+  .copyright .brand {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    width: 100%;
+    max-width: 100%;
+    border-bottom: 1px solid rgba(28, 36, 43, 0.4);
+  }
+  .copyright .brand p {
+    font-size: 14px !important;
+  }
+  .copyright nav {
+    width: 100%;
+    max-width: 100%;
+  }
+  .copyright nav:last-child a:last-child {
+    width: 100%;
+    text-align: center;
+  }
+  .banner {
+    display: none;
   }
 }
 /*# sourceMappingURL=company.css.map */

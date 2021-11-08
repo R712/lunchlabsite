@@ -20,6 +20,7 @@
         <div class="inner-wrapper">
             <h1><a href="#jump-hero">itemscout.</a></h1>
             <nav>
+                <a href="#jump-hero">처음</a>
                 <a href="#jump-intro">회사소개</a>
                 <a href="#jump-media">미디어</a>
                 <a href="#jump-recruit">채용안내</a>
@@ -44,7 +45,7 @@
         <div class="msg">
             <strong class="wow fadeInUp" data-wow-delay=".25s">우리 회사는</strong>
             <strong class="wow fadeInUp" data-wow-delay=".25s">이런 회사랍니다.</strong>
-            <p class="wow fadeIn" data-wow-delay=".25s">좀 더 자세한 우리 회사의 근무환경과 문화를 소개합니다.</p>
+            <p class="wow fadeIn" data-wow-delay=".25s">아이템스카우트에서 생각하고 실천하는<br />근무 환경과 문화를 소개합니다.</p>
             <div class="bubble wow fadeInUp" data-wow-delay=".5s">
                 <div class="item">
                     <img src="img/img-ceomsg.png" />
@@ -98,32 +99,32 @@
             <strong class="wow fadeInUp" data-wow-delay=".25s">든든한 파트너</strong>
             <p class="wow fadeIn" data-wow-delay=".25s">온라인커머스 시장의 드넓은 내일을 함께 그립니다.<br/>언제나 멋진 기회를 향해 활짝 열려있답니다.</p>
             <a href="javascript:void(0);" class="link-action wow fadeInUp" data-wow-delay="1s">지금 문의하기 &gt;</a>
-            <div class="partners">
-                <div>
-                    <div class="item wow fadeInUp" data-wow-delay=".5s">
-                        <img src="img/logo-google.svg" />
-                    </div>
-                    <div class="item wow fadeInUp">
-                        <img src="img/logo-amazon.svg" />
-                    </div>
+        </div>
+        <div class="partners">
+            <div>
+                <div class="item wow fadeInUp" data-wow-delay=".5s">
+                    <img src="img/logo-google.svg" />
                 </div>
-                <div>
-                    <div class="item wow fadeInUp" data-wow-delay=".2s">
-                        <img src="img/logo-amore.png" />
-                    </div>
-                    <div class="item wow fadeInUp" data-wow-delay=".9s">
-                        <img src="img/logo-naver.png" />
-                    </div>
-                    <div class="item wow fadeInUp">
-                        <img src="img/logo-google.svg" />
-                    </div>
+                <div class="item wow fadeInUp">
+                    <img src="img/logo-amazon.svg" />
                 </div>
-                <div>
-                    <div class="item wow fadeInUp" data-wow-delay=".4s">
-                        <img src="img/logo-naver.png" />
-                    </div>
-                    <div class="item wow fadeInUp" data-wow-delay="1s">⏳ 대기중</div>
+            </div>
+            <div>
+                <div class="item wow fadeInUp" data-wow-delay=".2s">
+                    <img src="img/logo-amore.png" />
                 </div>
+                <div class="item wow fadeInUp" data-wow-delay=".9s">
+                    <img src="img/logo-naver.png" />
+                </div>
+                <div class="item wow fadeInUp">
+                    <img src="img/logo-google.svg" />
+                </div>
+            </div>
+            <div>
+                <div class="item wow fadeInUp" data-wow-delay=".4s">
+                    <img src="img/logo-naver.png" />
+                </div>
+                <div class="item wow fadeInUp" data-wow-delay="1s">⏳ 대기중</div>
             </div>
         </div>
         <button class="btn-jump" onclick="location.href='#jump-media'">⌄</button>
@@ -187,7 +188,7 @@
                 <a href="javascipt:void(0);">개인정보 처리방침</a>
                 <a href="javascipt:void(0);">이용약관</a>
                 <a href="mailto:help@itemscout.io">제휴문의: <strong>help@itemscout.io</strong></a>
-                <a href="#jump-intro">⇡ 위로</a>
+                <a href="#jump-hero">⇡ 처음</a>
             </nav>
         </div>
     </footer>
@@ -205,9 +206,16 @@
 //
 //  빠른 호출용 정의
 //
-const callSoon = document.querySelector('.gnb nav');
+const jumpNav = document.querySelector('.gnb nav');
 const logo = document.querySelector('.gnb h1');
 const gnb = document.querySelector('.gnb');
+
+logo.onclick = function() {
+    gnb.classList.toggle('is-open');
+}
+jumpNav.onclick = function() {
+    gnb.classList.toggle('is-open');
+}
 
 new WOW().init();
 
