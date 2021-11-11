@@ -189,10 +189,10 @@ section {
             z-index: 100;
             position: relative;
             display: block;
-            margin-top: 40px;
+            margin-top: 24px;
             color: $c-brand;
             font-weight: 500;
-            font-size: 18px;
+            font-size: 16px;
             &:hover {
                 text-decoration: underline;
                 color: $c-brand;
@@ -229,9 +229,19 @@ section {
                 font-size: 22px;
             }
             a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 40px;
+                width: 250px;
+                height: 60px;
+                background: rgba($c-dark, .4);
                 color: $c-white;
+                border-radius: 12px;
+                backdrop-filter: blur(10px);
                 &:hover {
-                    text-decoration: underline;
+                    background: rgba($c-brand, .8);
+                    text-decoration: none;
                 }
             }
         }
@@ -289,6 +299,7 @@ section {
         }
         p {
             z-index: 1;
+            font-size: 18px;
             text-align: center;
         }
         a {
@@ -415,6 +426,80 @@ section {
                         color: $c-dark;
                         text-decoration: none;
                     }
+                }
+            }
+        }
+    }
+    &.culture {
+        background: $c-bg;
+        .welfares {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 72vw;
+            max-width: 600px;
+            &:hover div {
+                opacity: .4;
+            }
+            &:hover div:hover {
+                opacity: 1;
+            }
+            > div {
+                display: flex;
+                flex-direction: row;
+                transition: all .25s ease-in-out;
+                &:nth-child(even) {
+                    margin-left: 36px;
+                }
+                &:nth-child(odd) {
+                    margin-left: -36px;
+                }
+                &:nth-child(4) {
+                    opacity: .8;
+                }
+                &:last-child {
+                    opacity: .4;
+                }
+                &:hover {
+                    opacity: 1 !important;
+                }
+            }
+            .item {
+                position: relative;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                flex-direction: column;
+                margin: 8px;
+                padding-left: 56px;
+                min-width: 200px;
+                height: 72px;
+                width: 150px;
+                background: $c-white;
+                box-shadow: 0 1px 1px rgba($c-dark, .05), 0 12px 48px rgba($c-dark, .05);
+                border-radius: 12px;
+                transition: all .25s ease-in-out;
+                &::before {
+                    content: attr(data-symbol);
+                    position: absolute;
+                    left: 20px;
+                    font-size: 24px;
+                }
+                &:hover {
+                    z-index: 5;
+                    transform: scale(1.1);
+                }
+                strong {
+                    color: $c-dark;
+                    font-weight: 500;
+                    font-size: 14px;
+                }
+                span {
+                    color: $c-gray;
+                    font-weight: 400;
+                    font-size: 12px;
                 }
             }
         }
@@ -561,6 +646,15 @@ section {
     }
 }
 
+[data-arrow] {
+    &::after {
+        content: attr(data-arrow);
+        padding-left: 8px;
+        font-weight: 300;
+        opacity: .4;
+    }
+}
+
 .banner {
     z-index: 10;
     position: fixed;
@@ -657,7 +751,6 @@ section {
             line-height: 1;
             &:hover {
                 color: $c-dark;
-                text-decoration: underline;
             }
         }
         &:last-child a:last-child {
@@ -798,6 +891,9 @@ section {
             }
         }
     }
+    .msg a:last-child {
+        margin-top: 20px !important;
+    }
     .bubble {
         flex-direction: column !important;
         .item {
@@ -852,6 +948,23 @@ section {
     }
     .introduce {
         display: none;
+    }
+    .culture {
+        .welfares {
+            .item {
+                padding-left: 0 !important;
+                max-width: 40vw !important;
+                min-width: 40vw !important;
+                align-items: center !important;
+                &::before {
+                    position: relative !important;
+                    left: inherit !important;
+                }
+                span {
+                    display: none;
+                }
+            }
+        }
     }
     .copyright {
         .inner {
