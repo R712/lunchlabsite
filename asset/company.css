@@ -254,7 +254,6 @@ section .msg a {
 }
 
 section .msg a:hover {
-  text-decoration: underline;
   color: #4285F4;
 }
 
