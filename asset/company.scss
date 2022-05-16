@@ -1,8 +1,9 @@
 @import url('font.scss');
 @import url('animate.css');
 
-$c-brand: #4285F4;
-$c-dark: #1C242B;
+//$c-brand: #4285F4;
+$c-brand: #1A3997;
+$c-dark: #001C34;
 $c-gray: rgba($c-dark, .4);
 $c-white: #FFF;
 $c-bg: #E4F7FF;
@@ -60,11 +61,13 @@ body {
     position: fixed;
     display: flex;
     justify-content: center;
-    padding-top: 10px;
+    align-items: center;
     width: 100%;
+    height: 78px;
     font-size: 15px;
     line-height: 50px;
     &::before {
+        opacity: 0;
         content: '';
         z-index: -1;
         position: absolute;
@@ -72,8 +75,12 @@ body {
         top: 0;
         width: 100%;
         height: 78px;
-        background: rgba($c-brand, .8);
+        background: rgba($c-brand, .88);
         backdrop-filter: blur(10px);
+        transition: ease-in-out all .6s;
+    }
+    &.is-scroll::before {
+        opacity: 1;
     }
     .inner-wrapper {
         display: flex;
@@ -88,8 +95,15 @@ body {
     h1 {
         padding: 0 40px;
         a {
+            display: block;
+            height: 40px;
             font-size: 18px;
             font-weight: 700;
+            svg {
+                display: block;
+                margin: 8px 0 0;
+                width: 140px;
+            }
         }
     }
     nav {
@@ -97,12 +111,12 @@ body {
         flex-wrap: nowrap;
         align-items: center;
         justify-content: center;
-        // min-width: 320px;
         a {
+            opacity: .6;
             display: flex;
             align-items: center;
             margin: 0 4px;
-            padding: 10px 16px;
+            padding: 9px 16px 11px;
             height: 40px;
             border: 0;
             color: $c-white;
@@ -111,10 +125,11 @@ body {
             transition: all .25s cubic-bezier(.17,.67,.83,.67);
             border-radius: 4px;
             &:hover {
-                background: rgba($c-dark, .15);
+                background: rgba($c-dark, .24);
                 backdrop-filter: blur(10px);
             }
             &:last-child {
+                opacity: 1;
                 margin-right: 30px;
             }
         }
@@ -185,6 +200,14 @@ section {
             line-height: 1.33;
             letter-spacing: -0.5px;
         }
+        em {
+            opacity: .4;
+            margin-bottom: 4px;
+            color: $c-white;
+            font-style: normal;
+            font-size: 20px;
+            letter-spacing: 4px;
+        }
         a {
             z-index: 100;
             position: relative;
@@ -209,16 +232,17 @@ section {
             top: 0;
             width: 100%;
             height: 100%;
-            background: $c-white url('../img/olena-sergienko-dIMJWLx1YbE-unsplash.jpg') no-repeat fixed center;
+            background: $c-white url('../img/bg-office.jpg') no-repeat fixed center;
             background-size: cover;
             opacity: .5;
             animation: bgScale 10s infinite;
+            filter: blur(10px);
         }
         .btn-jump {
             color: $c-white;
         }
         .msg {
-            margin-top: 120px;
+            margin-top: 20vh;
             color: $c-white;
             strong {
                 font-size: 58px;
@@ -234,13 +258,15 @@ section {
                 margin-top: 40px;
                 width: 250px;
                 height: 60px;
-                background: rgba($c-dark, .4);
+                background: rgba($c-brand, .8);
                 color: $c-white;
                 border-radius: 12px;
                 backdrop-filter: blur(10px);
                 &:hover {
-                    background: rgba($c-brand, .8);
+                    background: rgba($c-brand, 1);
                     text-decoration: none;
+                    transform: scale(1.05);
+                    box-shadow: 0 4px 40px rgba($c-brand, .4);
                 }
             }
         }
@@ -290,6 +316,7 @@ section {
             height: 100%;
             background: $c-white url('../img/bg-media.png') no-repeat fixed center right;
             background-size: cover;
+            opacity: .6;
         }
         h3 {
             z-index: 1;
@@ -350,70 +377,74 @@ section {
         flex-direction: column;
         justify-content: center;
         overflow: hidden;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 33%;
+            background: $c-white url('../img/img-speech.jpg') no-repeat fixed center;
+            background-size: cover;
+            opacity: .16;
+            animation: bgScale 10s infinite;
+        }
+        .msg {
+            min-height: 88vh;
+        }
         .bubble {
             z-index: 1;
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-start;
+            flex-direction: column;
+            align-items: top;
+            justify-content: top;
+            margin: 80px 0 40px;
             max-width: 960px;
-            margin-top: 20px;
             font-size: 14px;
-            div {
+            .item {
                 position: relative;
                 display: flex;
                 flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
-                margin: 20px 20px 20px 0;
-                padding: 12px 16px;
-                max-width: 33%;
-                background: $c-white;
-                box-shadow: 0 1px 1px rgba($c-dark, .05), 0 24px 40px rgba($c-dark, .05);
-                border-radius: 6px;
+                padding: 40px;
                 transition: ease-in-out all .15s;
-                &:first-child {
-                    margin: 40px 40px 40px 0;
-                    width: 280px;
-                    transform: rotate(-2deg);
-                }
-                &:nth-child(3) {
-                    transform: rotate(-2deg);
-                }
-                &:hover {
-                    z-index: 5;
-                    transform: scale(1.1) rotate(2deg);
-                    img {
-                        filter: none;
-                    }
+                overflow: hidden;
+                // &:first-child {
+                //     margin: 40px 40px 40px 0;
+                //     width: 280px;
+                //     transform: rotate(-2deg);
+                // }
+                // &:nth-child(3) {
+                //     transform: rotate(-2deg);
+                // }
+                .thumb {
+                    overflow: hidden;
                 }
                 img {
-                    width: 100%;
-                    border-radius: 8px;
-                    filter: grayscale(100);
-                }
-                h4 {
-                    margin: 10px 0 0;
-                    padding: 0;
-                    font-size: 16px;
-                    letter-spacing: 1px;
-                    em {
-                        color: $c-gray;
-                        font-style: normal;
-                        font-size: 11px;
-                        letter-spacing: 0;
-                    }
+                    display: block;
+                    padding: 80px 0 0 0;
+                    height: 100%;
                 }
                 p {
-                    margin-top: 6px;
-                    opacity: .6;
-                    font-size: 13px;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 40px 0 0 16px;
                     text-align: left;
                 }
-                a {
-                    margin-top: 12px;
+                strong {
+                    opacity: 1;
                     color: $c-brand;
-                    font-weight: 700;
+                    font-size: 28px;
+                    line-height: 1.5;
+                }
+                span {
+                    opacity: .6;
+                    font-size: 28px;
+                    line-height: 1.5;
+                }
+                a {
+                    margin-top: 24px;
+                    color: $c-gray;
+                    font-weight: 500;
                     font-size: 15px;
                     &::after {
                         content: '>';
@@ -430,7 +461,7 @@ section {
         }
     }
     &.culture {
-        background: $c-bg;
+        background: rgba($c-bg, .2);
         .welfares {
             display: flex;
             flex-wrap: wrap;
@@ -662,7 +693,6 @@ section {
     width: 300px;
     padding: 20px;
     background: $c-bg;
-    border-radius: 12px 0;
     box-shadow: 0 1px 1px rgba($c-brand, .05), 0 12px 40px rgba($c-brand, .25);
     transition: all .25s ease-in-out;
     &:hover {
@@ -682,6 +712,7 @@ section {
     p {
         margin-top: 8px;
         font-size: 13px;
+        font-weight: 400;
         word-break: keep-all;
     }
 }
@@ -692,7 +723,6 @@ section {
     align-items: center;
     justify-content: space-between;
     background: lighten($c-dark, 90%);
-    color: #999;
     .inner {
         display: flex;
         align-items: flex-start;
@@ -705,6 +735,9 @@ section {
         // min-width: 320px;
         width: 50%;
         color: $c-gray;
+        svg {
+             width: 180px;
+        }
         strong {
             color: $c-gray;
             font-weight: 700;
@@ -841,6 +874,9 @@ section {
                 background: $c-white;
                 transition: all .15s cubic-bezier(.17,.67,.83,.67);
             }
+            svg {
+                opacity: 0;
+            }
         }
         nav {
             position: fixed;
@@ -872,7 +908,7 @@ section {
         }
         &.is-open {
             &::before {
-                background: $c-brand;
+                background: none;
             }
             nav {
                 top: 78px;
