@@ -215,6 +215,7 @@ section .data-copyright a {
 }
 
 section .btn-jump {
+  z-index: 55;
   position: absolute;
   left: 50%;
   bottom: 24px;
