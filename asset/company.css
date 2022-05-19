@@ -1038,4 +1038,11 @@ section.contact button:hover {
     display: none;
   }
 }
+
+.is-ready {
+  padding: 240px 0;
+  opacity: .2;
+  font-size: 88px;
+  text-align: center;
+}
 /*# sourceMappingURL=company.css.map */
