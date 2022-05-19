@@ -327,6 +327,7 @@ section.hero .msg span {
 }
 
 section.hero .msg strong {
+  color: #FFF;
   font-weight: 600;
 }
 
