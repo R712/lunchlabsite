@@ -249,6 +249,7 @@ section .msg {
 }
 
 section .msg p {
+  opacity: .8;
   z-index: 100;
   position: relative;
   margin-top: 10px;
@@ -514,22 +515,14 @@ section.interview {
   overflow: hidden;
 }
 
-section.interview::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 33%;
-  background: #FFF url("../img/img-speech.jpg") no-repeat fixed center;
-  background-size: cover;
-  opacity: .16;
-  -webkit-animation: bgScale 10s infinite;
-          animation: bgScale 10s infinite;
-}
-
 section.interview .msg {
   min-height: 88vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 section.interview .bubble {
@@ -547,8 +540,8 @@ section.interview .bubble {
   -webkit-box-pack: top;
       -ms-flex-pack: top;
           justify-content: top;
-  margin: 80px 0 40px;
-  max-width: 960px;
+  margin: 60px 0;
+  max-width: 800px;
   font-size: 14px;
 }
 
@@ -592,14 +585,21 @@ section.interview .bubble .item p {
 section.interview .bubble .item strong {
   opacity: 1;
   color: #1A3997;
-  font-size: 28px;
+  font-size: 37px;
   line-height: 1.5;
 }
 
 section.interview .bubble .item span {
-  opacity: .6;
+  opacity: .4;
   font-size: 28px;
   line-height: 1.5;
+  word-break: keep-all;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+section.interview .bubble .item span:hover {
+  opacity: .8;
 }
 
 section.interview .bubble .item a {
@@ -934,6 +934,57 @@ section.recruit .openposition p {
   opacity: .8;
 }
 
+section.recruit .btn-jump {
+  color: #FFF;
+}
+
+section.map {
+  padding: 60px;
+  min-height: inherit;
+  background: #FFF;
+}
+
+section.map .map-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 0 40px;
+  width: 60%;
+  max-width: 540px;
+  min-width: 320px;
+}
+
+section.map .map-desc h4 {
+  opacity: .6;
+  font-size: 28px;
+}
+
+section.map .map-desc span {
+  margin-top: 12px;
+  opacity: .6;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+section.map .map-desc em {
+  font-style: normal;
+}
+
+section.map .map-inner {
+  max-width: 640px;
+  min-width: 320px;
+  width: 60%;
+  height: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
 [data-arrow]::after {
   content: attr(data-arrow);
   padding-left: 8px;
@@ -1081,12 +1132,37 @@ section.recruit .openposition p {
 
 .copyright nav a:hover {
   color: #001C34;
+  text-decoration: underline;
 }
 
 .copyright nav:last-child a:last-child {
-  margin-top: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 36px;
   color: #001C34;
+  font-size: 16px;
   text-align: right;
+}
+
+.copyright nav:last-child a:last-child img {
+  opacity: .6;
+  margin-right: 4px;
+}
+
+.copyright nav:last-child a:last-child:hover {
+  -webkit-animation: blingJump 2s infinite;
+          animation: blingJump 2s infinite;
 }
 
 .copyright nav strong {
