@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("font.scss");
 @import url("animate.css");
 input:focus {
@@ -109,8 +110,9 @@ body {
 }
 
 .gnb .brand svg {
+  position: relative;
   display: block;
-  width: 140px;
+  width: 100px;
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
@@ -289,8 +291,9 @@ section .msg a:hover {
 }
 
 section.hero {
+  position: relative;
   min-height: 90vh;
-  background: #FFF url("../img/bg-cook.jpg") no-repeat fixed center;
+  background: #FFF url("../img/preview-pic.png") no-repeat fixed center;
   background-size: cover;
   overflow: hidden;
 }
@@ -302,11 +305,7 @@ section.hero::before {
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 84, 78, 0.4);
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
-  -webkit-animation: bgEffect 8s infinite;
-          animation: bgEffect 8s infinite;
+  background: rgba(15, 84, 78, 0.48);
 }
 
 section.hero .btn-jump {
@@ -314,7 +313,9 @@ section.hero .btn-jump {
 }
 
 section.hero .msg {
-  margin-top: 10vh;
+  z-index: 1;
+  position: relative;
+  margin: 20vh 0 440px;
   color: #FFF;
 }
 
@@ -367,6 +368,25 @@ section.hero .msg a:hover {
           transform: scale(1.05);
   -webkit-box-shadow: 0 4px 40px rgba(15, 84, 78, 0.4);
           box-shadow: 0 4px 40px rgba(15, 84, 78, 0.4);
+}
+
+section.hero .preview-app {
+  position: absolute;
+  bottom: -180px;
+  margin-top: 40px;
+  width: 376px;
+  height: 640px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 40px rgba(15, 84, 78, 0.5);
+          box-shadow: 0 0 40px rgba(15, 84, 78, 0.5);
+  overflow: hidden;
+}
+
+section.hero .preview-app img {
+  display: block;
+  width: 100%;
+  -webkit-transform: translateY(-60px);
+          transform: translateY(-60px);
 }
 
 section.why {
@@ -666,6 +686,16 @@ section.product {
   background: rgba(15, 84, 78, 0.03);
 }
 
+section.information {
+  padding: 100px 0;
+  background: rgba(15, 84, 78, 0.03);
+}
+
+section.information .msg h2 {
+  color: #0F544E;
+  font-size: 44px;
+}
+
 section.contact {
   position: relative;
   display: -webkit-box;
@@ -742,6 +772,107 @@ section.contact button:hover {
           box-shadow: 0 1px 1px rgba(15, 84, 78, 0.05), 0 12px 40px rgba(15, 84, 78, 0.4);
   -webkit-transform: translateY(-4px);
           transform: translateY(-4px);
+}
+
+/*
+    FAQ 아코디언
+*/
+.faq {
+  max-width: 800px;
+  border: 1px solid rgba(15, 84, 78, 0.06);
+  background: #FFF;
+  border-radius: 8px;
+}
+
+.faq .faq-item {
+  position: relative;
+  border-top: 1px solid rgba(15, 84, 78, 0.06);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  overflow: hidden;
+}
+
+.faq .faq-item input {
+  display: none;
+}
+
+.faq .faq-item label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 16px 24px;
+  background: #FFF;
+  color: rgba(15, 84, 78, 0.5);
+  font-weight: 500;
+  font-size: 20px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+.faq .faq-item label::before {
+  content: 'Q';
+  width: 24px;
+  color: rgba(15, 84, 78, 0.5);
+}
+
+.faq .faq-item div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 0;
+  border-top: 1px solid rgba(15, 84, 78, 0.06);
+  background: #FFF;
+  color: #0f544e;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  overflow: hidden;
+  -webkit-transition: height .2s ease-in-out;
+  transition: height .2s ease-in-out;
+}
+
+.faq .faq-item div::before {
+  content: '답변:';
+  color: rgba(15, 84, 78, 0.4);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.faq .faq-item :checked + label {
+  color: #0F544E;
+  font-weight: 700;
+}
+
+.faq .faq-item :checked ~ div {
+  margin: 0 16px 16px;
+  padding: 32px 32px 16px;
+  height: inherit;
+}
+
+.faq .faq-item:first-child {
+  border-top: 0;
+  border-radius: 16px 16px 0 0;
+}
+
+.faq .faq-item:last-child {
+  border-radius: 0 0 16px 16px;
+}
+
+.faq .faq-item:hover {
+  z-index: 5;
+  -webkit-box-shadow: 0 8px 16px rgba(15, 84, 78, 0.06);
+          box-shadow: 0 8px 16px rgba(15, 84, 78, 0.06);
 }
 
 .copyright {
@@ -1037,12 +1168,5 @@ section.contact button:hover {
   .clients {
     display: none;
   }
-}
-
-.is-ready {
-  padding: 240px 0;
-  opacity: .2;
-  font-size: 88px;
-  text-align: center;
 }
 /*# sourceMappingURL=company.css.map */
