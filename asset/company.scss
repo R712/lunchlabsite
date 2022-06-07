@@ -250,7 +250,7 @@ section {
         z-index: 1;
         position: relative;
         min-height: 100vh;
-        background: $c-bg url('../img/pic-life.png') no-repeat center bottom fixed;
+        background: $c-bg url('../img/bg-mealkit.jpg') no-repeat center bottom fixed;
         background-size: cover;
         overflow: hidden;
         &::before {
@@ -260,7 +260,7 @@ section {
             top: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to top, rgba($c-brand, .9) 80px, rgba($c-brand, .2) 24%);
+            background: linear-gradient(to top, rgba($c-cheese, .9) 80px, rgba($c-brand, .2) 24%);
         }
         .btn-jump {
             color: $c-white;
@@ -859,6 +859,16 @@ section {
                     font-weight: 600;
                     opacity: .4;
                 }
+            }
+        }
+    }
+    &.information {
+        padding: 100px 0;
+        background: $c-bg;
+        .msg {
+            h2 {
+                color: $c-brand;
+                font-size: $f-xxl;
             }
         }
     }
