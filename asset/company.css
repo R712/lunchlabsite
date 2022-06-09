@@ -1375,13 +1375,12 @@ section.contact button:hover {
           backdrop-filter: blur(10px);
 }
 
-.copyright .brand {
+.copyright svg {
   opacity: .6;
   margin-bottom: 20px;
   padding: 0;
   width: 120px;
-  -webkit-filter: saturate(60%);
-          filter: saturate(60%);
+  fill: #0F544E;
 }
 
 .copyright p {

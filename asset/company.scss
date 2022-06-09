@@ -1017,12 +1017,12 @@ section {
         padding: 64px 0 24px;
         backdrop-filter: blur(10px);
     }
-    .brand {
+    svg {
         opacity: .6;
         margin-bottom: 20px;
         padding: 0;
         width: 120px;
-        filter: saturate(60%);
+        fill: $c-brand;
     }
     p {
         margin-top: 8px;
