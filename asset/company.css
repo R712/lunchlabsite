@@ -316,7 +316,7 @@ section.hero {
   z-index: 1;
   position: relative;
   min-height: 100vh;
-  background: rgba(15, 84, 78, 0.03) url("/lunchlab/pic/220509-0982.png") no-repeat center bottom fixed;
+  background: rgba(15, 84, 78, 0.03) url("/pic/220509-0982.png") no-repeat center bottom fixed;
   background-size: cover;
   overflow: hidden;
 }
@@ -449,7 +449,7 @@ section.why::before {
   margin-left: -1440px;
   width: 1180px;
   height: 100%;
-  background: url("/lunchlab/img/obj-meal.png") no-repeat right 100px;
+  background: url("/img/obj-meal.png") no-repeat right 100px;
   background-size: 800px;
   opacity: .8;
   -webkit-transform: rotate(5deg);
@@ -464,7 +464,7 @@ section.why::after {
   margin-right: -980px;
   width: 900px;
   height: 100%;
-  background: url("/lunchlab/img/obj-salad.png") no-repeat left center;
+  background: url("/img/obj-salad.png") no-repeat left center;
   background-size: 900px;
   opacity: .8;
   -webkit-transform: rotate(-5deg);
@@ -724,22 +724,22 @@ section.process .introduce .item {
 }
 
 section.process .introduce .item[data-kind=order] {
-  background: rgba(15, 84, 78, 0.03) url("/lunchlab/img/pic-order.png") no-repeat center bottom;
+  background: rgba(15, 84, 78, 0.03) url("/img/pic-order.png") no-repeat center bottom;
   background-size: 520px !important;
 }
 
 section.process .introduce .item[data-kind=cook] {
-  background: rgba(15, 84, 78, 0.03) url("/lunchlab/pic/220609-0019.png") no-repeat center;
+  background: rgba(15, 84, 78, 0.03) url("/pic/220609-0019.png") no-repeat center;
   background-size: 760px !important;
 }
 
 section.process .introduce .item[data-kind=delivery] {
-  background: rgba(15, 84, 78, 0.03) url("/lunchlab/pic/220509-0027.png") no-repeat left bottom;
+  background: rgba(15, 84, 78, 0.03) url("/pic/220509-0027.png") no-repeat left bottom;
   background-size: 600px !important;
 }
 
 section.process .introduce .item[data-kind=clean] {
-  background: rgba(15, 84, 78, 0.03) url("/lunchlab/img/pic-wash.png") no-repeat right bottom;
+  background: rgba(15, 84, 78, 0.03) url("/img/pic-wash.png") no-repeat right bottom;
   background-size: 520px !important;
 }
 
@@ -881,15 +881,15 @@ section.product .item {
 }
 
 section.product .item[data-kind=meal] {
-  background: rgba(15, 84, 78, 0.4) url("../pic/meal1.png") no-repeat right -40px;
+  background: rgba(15, 84, 78, 0.4) url("/pic/meal1.png") no-repeat right -40px;
 }
 
 section.product .item[data-kind=fresh] {
-  background: rgba(15, 84, 78, 0.4) url("../pic/fresh2.png") no-repeat -20px -60px;
+  background: rgba(15, 84, 78, 0.4) url("/pic/fresh2.png") no-repeat -20px -60px;
 }
 
 section.product .item[data-kind=yogurt] {
-  background: rgba(15, 84, 78, 0.4) url("../pic/yogurt.png") no-repeat -100px -60px;
+  background: rgba(15, 84, 78, 0.4) url("/pic/yogurt.png") no-repeat -100px -60px;
 }
 
 section.product .item[data-kind]::before {
