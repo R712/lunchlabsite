@@ -1,5 +1,6 @@
-@import url('font.scss');
-@import url('animate.css');
+@import url(font.css);  // 웹폰트 Spoqa Han Sans Neo
+@import url(animate.css);   // animation
+@import url(icons.min.css); // pure css 아이콘
 
 //
 //  기본 세팅
@@ -144,8 +145,11 @@ body {
                 flex-direction: row;
                 opacity: 1;
                 margin-right: 30px;
-                padding-left: 40px;
-                background: $c-brand url('https://icongr.am/material/email-outline.svg?size=20&color=FFFFFF') no-repeat 12px center;
+                background: $c-brand;
+                .icon {
+                    margin-right: 10px;
+                    opacity: .6;
+                }
             }
         }
         &:hover a {
@@ -250,7 +254,7 @@ section {
         z-index: 1;
         position: relative;
         min-height: 100vh;
-        background: $c-bg url('../img/bg-mealkit.jpg') no-repeat center bottom fixed;
+        background: $c-bg url('https://r712.github.io/lunchlab/pic/220509-0982.png') no-repeat center bottom fixed;
         background-size: cover;
         overflow: hidden;
         &::before {
@@ -380,11 +384,6 @@ section {
             font-size: 14px;
             backdrop-filter: blur(30px);
             border-radius: 16px;
-            hr {
-                margin: 40px 0;
-                border: 0;
-                border-top: 1px solid rgba($c-dark, .05);
-            }
             em {
                 margin-bottom: 8px;
                 opacity: .5;
@@ -398,6 +397,35 @@ section {
                 font-size: 24px;
                 line-height: 1.7;
                 word-break: keep-all;
+            }
+        }
+        .counts {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid rgba($c-dark, .05);
+            em {
+                width: 100%;
+            }
+            .item {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                small {
+                    font-weight: 600;
+                    font-size: $f-md;
+                }
+                strong {
+                    font-size: $f-xxl;
+                }
+            }
+            .desc {
+                opacity: .6;
+                width: 100%;
+                font-weight: 400;
+                font-size: $f-md;
             }
         }
     }
@@ -504,21 +532,24 @@ section {
                 min-width: 280px;
                 height: 360px;
                 background: $c-bg;
-                background-size: 560px !important;
                 color: $c-white;
                 transition: all .8s ease-in-out;
                 border-radius: 16px;
                 &[data-kind=order] {
                     background: $c-bg url('../img/pic-order.png') no-repeat center bottom;
+                    background-size: 520px !important;
                 }
                 &[data-kind=cook] {
-                    background: $c-bg url('../img/pic-fresh.png') no-repeat center bottom;
+                    background: $c-bg url('/pic/220609-0019.png') no-repeat center;
+                    background-size: 760px !important;
                 }
                 &[data-kind=delivery] {
-                    background: $c-bg url('../img/pic-box.png') no-repeat center bottom;
+                    background: $c-bg url('/pic/220509-0027.png') no-repeat left bottom;
+                    background-size: 600px !important;
                 }
                 &[data-kind=clean] {
-                    background: $c-bg url('../img/pic-wash.png') no-repeat center bottom;
+                    background: $c-bg url('../img/pic-wash.png') no-repeat right bottom;
+                    background-size: 520px !important;
                 }
                 &::before {
                     content: '';
@@ -530,9 +561,6 @@ section {
                     background: linear-gradient(to top, rgba($c-cheese, .8), transparent);
                     border-radius: 16px;
                     transition: all .4s ease;
-                }
-                &:hover {
-                    background-size: 600px !important;
                 }
             }
             h4 {
@@ -577,12 +605,11 @@ section {
         .products {
             position: relative;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
             max-width: 1080px;
-            width: 84%;
+            width: 100%;
             padding: 20px 40px 180px;
         }
         .msg {
@@ -610,26 +637,24 @@ section {
             align-items: flex-start;
             justify-content: flex-start;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin: 20px;
             padding: 32px;
-            width: 100%;
-            max-width: 840px;
-            height: 240px;
+            width: 40%;
+            min-width: 280px;
+            height: 360px;
             background: $c-bg;
-            background-size: cover !important;
+            background-size: 560px !important;
             color: $c-white;
-            transition: all .2s ease-in-out;
+            transition: all .8s ease-in-out;
             border-radius: 16px;
-            box-shadow: 0 1px 1px $c-bd;
-            text-shadow: 0 1px 1px rgba($c-dark, .1), 0 4px 40px rgba($c-dark, .25);
             &[data-kind=meal] {
-                background: $c-bg url('../img/plan-meal.png') no-repeat right -60px;
+                background: $c-alpha1 url('/pic/meal1.png') no-repeat right -40px;
             }
             &[data-kind=fresh] {
-                background: $c-alpha1 url('../img/plan-fresh.png') no-repeat right -60px;
+                background: $c-alpha1 url('/pic/fresh2.png') no-repeat -20px -60px;
             }
             &[data-kind=yogurt] {
-                background: $c-bg url('../img/plan-yogurt.png') no-repeat right -60px;
+                background: $c-alpha1 url('/pic/yogurt.png') no-repeat -100px -60px;
             }
             &[data-kind]::before {
                 content: '';
@@ -638,7 +663,7 @@ section {
                 bottom: 0;
                 width: 100%;
                 height: 100%;
-                background: linear-gradient(125deg, $c-alpha1 60%, $c-bg);
+                background: linear-gradient(0deg, $c-alpha0 30%, $c-alpha1 40%, transparent 60%);
                 border-radius: 16px;
             }
             &[data-kind]::after {
@@ -673,6 +698,9 @@ section {
                     font-size: 120px;
                     line-height: 1;
                 }
+            }
+            &:hover {
+                background-size: 600px !important;
             }
         }
         h4 {
@@ -711,11 +739,23 @@ section {
     }
     &.information {
         padding: 100px 0;
+        min-height: 100vh !important;
         background: $c-bg;
         .msg {
             h2 {
+                z-index: 1;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 24px;
                 color: $c-brand;
                 font-size: $f-xxl;
+                &::before {
+                    content: '🤔';
+                    font-size: 72px;
+                    line-height: 64px;
+                }
             }
         }
     }
@@ -862,16 +902,6 @@ section {
             }
         }
     }
-    &.information {
-        padding: 100px 0;
-        background: $c-bg;
-        .msg {
-            h2 {
-                color: $c-brand;
-                font-size: $f-xxl;
-            }
-        }
-    }
     &.contact {
         position: relative;
         display: flex;
@@ -879,49 +909,153 @@ section {
         align-items: center;
         padding: 80px;
         width: 100%;
-        min-height: 480px;
+        min-height: 100vh;
+        background: $c-bg;
         color: $c-dark;
-        &::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: $c-bg;
-        }
         strong {
             z-index: 1;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin-bottom: 24px;
             color: $c-brand;
             font-size: $f-xxl;
+            &::before {
+                content: '👩🏻‍💻';
+                font-size: 72px;
+                line-height: 64px;
+            }
         }
-        div {
+        .form {
             z-index: 5;
             position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            min-width: 360px;
+            max-width: 640px;
+            width: 100%;
+            form {
+                width: 100%;
+            }
         }
-        button {
-            margin: -40px 12px 0;
-            width: 180px;
+        button[type=submit] {
+            margin: 20px 0 0;
+            width: 100%;
             height: 60px;
             border-radius: 6px;
             border: 0;
-            background: $c-white;
-            color: $c-brand;
-            font-weight: 600;
-            font-size: 18px;
+            background: $c-alpha0;
+            color: $c-white;
+            font-weight: 500;
+            font-size: 22px;
             cursor: pointer;
             box-shadow: 0 1px 1px rgba($c-dark, .05), 0 24px 40px rgba($c-dark, .05);
             &:hover {
                 background: $c-brand;
                 color: $c-white;
                 box-shadow: 0 1px 1px rgba($c-brand, .05), 0 12px 40px rgba($c-brand, .4);
-                transform: translateY(-4px);
+                transform: translateY(-2px);
+            }
+        }
+        .in-input {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 20px;
+            cursor: pointer;
+            .in-label {
+                padding-bottom: 6px;
+                color: $c-alpha0;
+                font-size: $f-md;
+                transition: color .4s;
+                &::after {
+                    content: '*';
+                    padding-left: 8px;
+                    color: $c-cheese;
+                    font-size: $f-md;
+                }
+            }
+            input[type=text],
+            input[type=tel],
+            input[type=email] {
+                position: relative;
+                left: inherit;
+                top: inherit;
+                padding-left: 16px;
+                border: 1px solid $c-bd;
+                width: 100%;
+                height: 54px;
+                color: $c-brand;
+                font-size: $f-md;
+                border-radius: $radius;
+                &::placeholder {
+                    color: $c-alpha1;
+                }
+                &:disabled {
+                    background: $c-bg;
+                    color: $c-alpha0;
+                }
+                &:focus {
+                    border: 1px solid $c-alpha1;
+                    box-shadow: 0 1px 16px $c-bd;
+                }
+            }
+            &:focus-within {
+                .in-label {
+                    color: $c-brand;
+                }
+                input {
+                    font-weight: 500;
+                }
+            }
+        }
+        .in-checkbox {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 24px;
+            padding: 2px 0;
+            font-size: $f-md;
+            cursor: pointer;
+            input {
+                margin-right: 10px;
+                background: $c-white;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                border: 2px solid $c-alpha1;
+                width: 20px;
+                height: 20px;
+                border-radius: 3px;
+                cursor: pointer;
+                &:checked {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                border: 2px solid $c-brand;
+                width: 20px;
+                height: 20px;
+                    &::after {
+                        z-index: 1;
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: 3px;
+                        width: 20px;
+                        height: 20px;
+                        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='%230E544E' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M5 12l5 5l10 -10'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+                        background-size: 18px;
+                    }
+                }
+            }
+            a {
+                color: $c-brand;
+                font-weight: 600;
+                text-decoration: underline;
             }
         }
     }
@@ -938,7 +1072,7 @@ section {
     .faq-item {
         position: relative;
         border-top: 1px solid $c-bd;
-        transition: all .2s ease-in-out;
+        transition: all .2s;
         overflow: hidden;
         input {
             display: none;
@@ -951,7 +1085,7 @@ section {
             color: $c-alpha0;
             font-weight: 500;
             font-size: $f-lg;
-            transition: all .2s ease-in-out;
+            transition: all .2s;
             cursor: pointer;
             &::before {
                 content: 'Q';
@@ -963,7 +1097,9 @@ section {
             display: flex;
             flex-direction: column;
             box-sizing: border-box;
-            height: 0;
+            width: 100%;
+            max-height: 0 !important;
+            padding: 0 20px;
             border-top: 1px solid $c-bd;
             background: $c-white;
             color: rgba($c-brand, 80%);
@@ -971,7 +1107,7 @@ section {
             font-weight: 400;
             line-height: 1.75;
             overflow: hidden;
-            transition: height .4s ease;
+            transition: all .2s;
             &::before {
                 content: '답변:';
                 color: $c-alpha1;
@@ -984,9 +1120,8 @@ section {
             font-weight: 700;
         }
         :checked ~ div {
-            margin: 0 16px 16px;
-            padding: 32px 32px 16px;
-            height: inherit;
+            padding: 20px;
+            max-height: 100% !important;
         }
         &:first-child {
             border-top: 0;
@@ -1002,6 +1137,41 @@ section {
     }
 }
 
+//
+//  약관용 문서 스타일링
+//
+.terms {
+    padding: 120px 40px 100px;
+    background: rgba($c-dark, .03);
+    color: rgba($c-dark, .8);
+    font-weight: 400;
+    .inner {
+        max-width: 1000px;
+        width: 80vw;
+    }
+    h1 {
+        padding-bottom: 8px;
+        border-bottom: 1px solid $c-bd;
+        font-size: 32px;
+    }
+    h2 {
+        margin-top: 24px;
+    }
+    p {
+        margin-top: 12px;
+    }
+    ol {
+        margin-top: 12px;
+        padding-left: 20px;
+        li {
+            margin-top: 4px;
+        }
+        ol {
+            padding-left: 36px;
+        }
+    }
+}
+
 .copyright {
     display: flex;
     flex-direction: column;
@@ -1013,7 +1183,7 @@ section {
         display: flex;
         flex-direction: column;
         width: 84%;
-        max-width: 880px;
+        max-width: 1000px;
         padding: 64px 0 24px;
         backdrop-filter: blur(10px);
     }
@@ -1037,7 +1207,7 @@ section {
     }
     h6 {
         width: 84%;
-        max-width: 880px;
+        max-width: 1000px;
         padding: 16px 0 40px;
         font-size: $f-md;
     }
