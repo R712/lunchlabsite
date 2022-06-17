@@ -254,7 +254,7 @@ section {
         z-index: 1;
         position: relative;
         min-height: 100vh;
-        background: $c-bg url('/lunchlab/pic/220509-0982.png') no-repeat center bottom fixed;
+        background: $c-bg url('/pic/220509-0982.png') no-repeat center bottom fixed;
         background-size: cover;
         overflow: hidden;
         &::before {
@@ -352,7 +352,7 @@ section {
             margin-left: -1440px;
             width: 1180px;
             height: 100%;
-            background: url('/lunchlab/img/obj-meal.png') no-repeat right 100px;
+            background: url('/img/obj-meal.png') no-repeat right 100px;
             background-size: 800px;
             opacity: .8;
             transform: rotate(5deg);
@@ -365,7 +365,7 @@ section {
             margin-right: -980px;
             width: 900px;
             height: 100%;
-            background: url('/lunchlab/img/obj-salad.png') no-repeat left center;
+            background: url('/img/obj-salad.png') no-repeat left center;
             background-size: 900px;
             opacity: .8;
             transform: rotate(-5deg);
@@ -536,19 +536,19 @@ section {
                 transition: all .8s ease-in-out;
                 border-radius: 16px;
                 &[data-kind=order] {
-                    background: $c-bg url('/lunchlab/img/pic-order.png') no-repeat center bottom;
+                    background: $c-bg url('/img/pic-order.png') no-repeat center bottom;
                     background-size: 520px !important;
                 }
                 &[data-kind=cook] {
-                    background: $c-bg url('/lunchlab/pic/220609-0019.png') no-repeat center;
+                    background: $c-bg url('/pic/220609-0019.png') no-repeat center;
                     background-size: 760px !important;
                 }
                 &[data-kind=delivery] {
-                    background: $c-bg url('/lunchlab/pic/220509-0027.png') no-repeat left bottom;
+                    background: $c-bg url('/pic/220509-0027.png') no-repeat left bottom;
                     background-size: 600px !important;
                 }
                 &[data-kind=clean] {
-                    background: $c-bg url('/lunchlab/img/pic-wash.png') no-repeat right bottom;
+                    background: $c-bg url('/img/pic-wash.png') no-repeat right bottom;
                     background-size: 520px !important;
                 }
                 &::before {
@@ -648,13 +648,13 @@ section {
             transition: all .8s ease-in-out;
             border-radius: 16px;
             &[data-kind=meal] {
-                background: $c-alpha1 url('../pic/meal1.png') no-repeat right -40px;
+                background: $c-alpha1 url('/pic/meal1.png') no-repeat right -40px;
             }
             &[data-kind=fresh] {
-                background: $c-alpha1 url('../pic/fresh2.png') no-repeat -20px -60px;
+                background: $c-alpha1 url('/pic/fresh2.png') no-repeat -20px -60px;
             }
             &[data-kind=yogurt] {
-                background: $c-alpha1 url('../pic/yogurt.png') no-repeat -100px -60px;
+                background: $c-alpha1 url('/pic/yogurt.png') no-repeat -100px -60px;
             }
             &[data-kind]::before {
                 content: '';
