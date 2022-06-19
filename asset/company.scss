@@ -178,6 +178,9 @@ body {
     }
 }
 
+/*
+    섹션 스타일링
+*/
 section {
     position: relative;
     display: flex;
@@ -250,6 +253,9 @@ section {
             }
         }
     }
+    /*
+        히어로 섹션
+    */
     &.hero {
         z-index: 1;
         position: relative;
@@ -338,6 +344,9 @@ section {
             }
         }
     }
+    /*
+        미션
+    */
     &.why {
         flex-direction: column;
         justify-content: center;
@@ -429,6 +438,9 @@ section {
             }
         }
     }
+    /*
+        클라이언트
+    */
     &.clients {
         max-height: 90vh;
         .partners {
@@ -488,6 +500,9 @@ section {
             }
         }
     }
+    /*
+        프로세스
+    */
     &.process {
         z-index: 1;
         position: relative;
@@ -600,6 +615,9 @@ section {
             }
         }
     }
+    /*
+        라인업 제품 메뉴
+    */
     &.product {
         background: $c-bg;
         .products {
@@ -737,6 +755,9 @@ section {
             font-size: 72px;
         }
     }
+    /*
+        Faq 섹션
+    */
     &.information {
         padding: 100px 0;
         min-height: 100vh !important;
@@ -759,6 +780,9 @@ section {
             }
         }
     }
+    /*
+        가이드
+    */
     &.guide {
         padding: 100px 0;
         background: $c-bd;
@@ -811,12 +835,14 @@ section {
             justify-content: center;
             align-items: flex-start;
             margin-top: 40px;
+            width: 100%;
             .item {
                 position: relative;
                 padding: 28px 24px;
                 width: calc(100% / 3);
                 height: 240px;
                 background: $c-white;
+                transition: all .4s;
                 &:first-child {
                     border-radius: 16px 0 0 16px;
                 }
@@ -845,6 +871,9 @@ section {
                 }
                 &[data-kind=start]::before {
                     content: '🥗';
+                }
+                &:hover {
+                    transform: scale(1.05);
                 }
             }
             ul {
@@ -881,27 +910,33 @@ section {
         .information {
             margin-top: 40px;
             width: 84%;
-            max-width: 780px;
-            color: $c-gray;
+            max-width: 600px;
+            color: $c-alpha0;
             list-style: none;
             li {
                 display: flex;
                 position: relative;
-                color: $c-gray;
+                color: $c-alpha0;
                 font-weight: 400;
-                font-size: 15px;
+                font-size: $f-md;
                 line-height: 28px;
                 word-break: keep-all;
                 &::before {
                     content: '✓';
                     margin: 0 12px 0 2px;
-                    color: $c-gray;
+                    color: $c-alpha0;
                     font-weight: 600;
                     opacity: .4;
+                }
+                &:first-child {
+                    color: $c-brand;
                 }
             }
         }
     }
+    /*
+        문의 contact
+    */
     &.contact {
         position: relative;
         display: flex;
@@ -1059,6 +1094,86 @@ section {
             }
         }
     }
+    /*
+        체험하기
+    */
+    .tryuse {
+        position: relative;
+        margin: 40px 0 40px;
+        padding: 40px;
+        width: 100%;
+        max-width: 1080px;
+        min-width: inherit;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: url('../img/pic-life.png') no-repeat center bottom;
+        background-size: 1080px;
+        color: $c-white;
+        border-radius: 16px;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: $c-alpha1;
+            border-radius: 16px;
+            transition: all .4s ease;
+        }
+        h2 {
+            z-index: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin: 24px;
+        }
+        small {
+            opacity: .8;
+            margin-bottom: 8px;
+            font-size: $f-md;
+        }
+        span {
+            color: $c-white;
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 48px;
+            letter-spacing: -1px;
+            &:nth-child(2) {
+                color: rgba($c-white, .8);
+            }
+        }
+        a {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba($c-white, .1);
+            color: $c-white;
+            font-weight: 600;
+            font-size: $f-lg;
+            &::after {
+                content: '>';
+                margin-left: 6px;
+                font-weight: 100;
+            }
+            &:hover {
+                color: $c-cheese;
+            }
+        }
+        p {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 24px;
+            padding: 24px;
+            background: rgba($c-gray, .2);
+            font-weight: 400;
+            font-size: $f-md;
+            word-break: keep-all;
+            border-radius: 12px;
+            backdrop-filter: blur(16px);
+        }
+    }
 }
 
 /*
@@ -1172,6 +1287,9 @@ section {
     }
 }
 
+/*
+    푸터
+*/
 .copyright {
     display: flex;
     flex-direction: column;
@@ -1232,6 +1350,10 @@ section {
     }
 }
 
+
+/*
+    애니메이션
+*/
 @keyframes blingEffect {
     from {
         transform: translateX(0);

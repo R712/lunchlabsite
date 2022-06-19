@@ -214,6 +214,9 @@ body {
   background-color: rgba(15, 84, 78, 0.03);
 }
 
+/*
+    섹션 스타일링
+*/
 section {
   position: relative;
   display: -webkit-box;
@@ -232,6 +235,33 @@ section {
   min-height: 900px;
   background: #FFF;
   color: #001C34;
+  /*
+        히어로 섹션
+    */
+  /*
+        미션
+    */
+  /*
+        클라이언트
+    */
+  /*
+        프로세스
+    */
+  /*
+        라인업 제품 메뉴
+    */
+  /*
+        Faq 섹션
+    */
+  /*
+        가이드
+    */
+  /*
+        문의 contact
+    */
+  /*
+        체험하기
+    */
 }
 
 section .btn-jump {
@@ -1105,6 +1135,7 @@ section.guide .cardbox {
       -ms-flex-align: start;
           align-items: flex-start;
   margin-top: 40px;
+  width: 100%;
 }
 
 section.guide .cardbox .item {
@@ -1113,6 +1144,8 @@ section.guide .cardbox .item {
   width: calc(100% / 3);
   height: 240px;
   background: #FFF;
+  -webkit-transition: all .4s;
+  transition: all .4s;
 }
 
 section.guide .cardbox .item:first-child {
@@ -1149,6 +1182,11 @@ section.guide .cardbox .item[data-kind=sign]::before {
 
 section.guide .cardbox .item[data-kind=start]::before {
   content: '🥗';
+}
+
+section.guide .cardbox .item:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 section.guide .cardbox ul {
@@ -1191,8 +1229,8 @@ section.guide .cardbox h4 {
 section.guide .information {
   margin-top: 40px;
   width: 84%;
-  max-width: 780px;
-  color: rgba(0, 28, 52, 0.4);
+  max-width: 600px;
+  color: rgba(15, 84, 78, 0.5);
   list-style: none;
 }
 
@@ -1201,9 +1239,9 @@ section.guide .information li {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  color: rgba(0, 28, 52, 0.4);
+  color: rgba(15, 84, 78, 0.5);
   font-weight: 400;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 28px;
   word-break: keep-all;
 }
@@ -1211,9 +1249,13 @@ section.guide .information li {
 section.guide .information li::before {
   content: '✓';
   margin: 0 12px 0 2px;
-  color: rgba(0, 28, 52, 0.4);
+  color: rgba(15, 84, 78, 0.5);
   font-weight: 600;
   opacity: .4;
+}
+
+section.guide .information li:first-child {
+  color: #0F544E;
 }
 
 section.contact {
@@ -1460,6 +1502,111 @@ section.contact .in-checkbox a {
   text-decoration: underline;
 }
 
+section .tryuse {
+  position: relative;
+  margin: 40px 0 40px;
+  padding: 40px;
+  width: 100%;
+  max-width: 1080px;
+  min-width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url("../img/pic-life.png") no-repeat center bottom;
+  background-size: 1080px;
+  color: #FFF;
+  border-radius: 16px;
+}
+
+section .tryuse::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 84, 78, 0.4);
+  border-radius: 16px;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+section .tryuse h2 {
+  z-index: 1;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 24px;
+}
+
+section .tryuse small {
+  opacity: .8;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+section .tryuse span {
+  color: #FFF;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: -1px;
+}
+
+section .tryuse span:nth-child(2) {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+section .tryuse a {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #FFF;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+section .tryuse a::after {
+  content: '>';
+  margin-left: 6px;
+  font-weight: 100;
+}
+
+section .tryuse a:hover {
+  color: #DCB574;
+}
+
+section .tryuse p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 400px;
+  margin: 24px;
+  padding: 24px;
+  background: rgba(0, 28, 52, 0.2);
+  font-weight: 400;
+  font-size: 16px;
+  word-break: keep-all;
+  border-radius: 12px;
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
+}
+
 /*
     FAQ 아코디언
 */
@@ -1601,6 +1748,9 @@ section.contact .in-checkbox a {
   padding-left: 36px;
 }
 
+/*
+    푸터
+*/
 .copyright {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1691,6 +1841,9 @@ section.contact .in-checkbox a {
   color: #0F544E;
 }
 
+/*
+    애니메이션
+*/
 @-webkit-keyframes blingEffect {
   from {
     -webkit-transform: translateX(0);
@@ -1703,7 +1856,6 @@ section.contact .in-checkbox a {
     opacity: .8;
   }
 }
-
 @keyframes blingEffect {
   from {
     -webkit-transform: translateX(0);
